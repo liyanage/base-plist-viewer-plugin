@@ -1,0 +1,276 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B4D3CBF148E7AD10019889D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D3CBE148E7AD10019889D /* Cocoa.framework */; };
+		1B4D3CC9148E7AD10019889D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D3CC7148E7AD10019889D /* InfoPlist.strings */; };
+		1B4D3CD2148E7B110019889D /* PlistBaseViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D3CD1148E7B110019889D /* PlistBaseViewer.xib */; };
+		1B4D3CD6148E7BDC0019889D /* PlistBaseViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B4D3CBB148E7AD10019889D /* PlistBaseViewer.baseviewer */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlistBaseViewer.baseviewer; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4D3CBE148E7AD10019889D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1B4D3CC1148E7AD10019889D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1B4D3CC2148E7AD10019889D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1B4D3CC3148E7AD10019889D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B4D3CC6148E7AD10019889D /* PlistBaseViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlistBaseViewer-Info.plist"; sourceTree = "<group>"; };
+		1B4D3CC8148E7AD10019889D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B4D3CCA148E7AD10019889D /* PlistBaseViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlistBaseViewer-Prefix.pch"; sourceTree = "<group>"; };
+		1B4D3CD0148E7AF70019889D /* BaseViewerPluginProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewerPluginProtocols.h; sourceTree = "<group>"; };
+		1B4D3CD1148E7B110019889D /* PlistBaseViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlistBaseViewer.xib; sourceTree = "<group>"; };
+		1B4D3CD3148E7BDC0019889D /* PlistBaseViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistBaseViewerViewController.h; sourceTree = "<group>"; };
+		1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistBaseViewerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B4D3CB8148E7AD10019889D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D3CBF148E7AD10019889D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B4D3CB0148E7AD10019889D = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CC4148E7AD10019889D /* PlistBaseViewer */,
+				1B4D3CBD148E7AD10019889D /* Frameworks */,
+				1B4D3CBC148E7AD10019889D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B4D3CBC148E7AD10019889D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CBB148E7AD10019889D /* PlistBaseViewer.baseviewer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B4D3CBD148E7AD10019889D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CBE148E7AD10019889D /* Cocoa.framework */,
+				1B4D3CC0148E7AD10019889D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B4D3CC0148E7AD10019889D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CC1148E7AD10019889D /* AppKit.framework */,
+				1B4D3CC2148E7AD10019889D /* CoreData.framework */,
+				1B4D3CC3148E7AD10019889D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1B4D3CC4148E7AD10019889D /* PlistBaseViewer */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CD0148E7AF70019889D /* BaseViewerPluginProtocols.h */,
+				1B4D3CD3148E7BDC0019889D /* PlistBaseViewerViewController.h */,
+				1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */,
+				1B4D3CD1148E7B110019889D /* PlistBaseViewer.xib */,
+				1B4D3CC5148E7AD10019889D /* Supporting Files */,
+			);
+			path = PlistBaseViewer;
+			sourceTree = "<group>";
+		};
+		1B4D3CC5148E7AD10019889D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D3CC6148E7AD10019889D /* PlistBaseViewer-Info.plist */,
+				1B4D3CC7148E7AD10019889D /* InfoPlist.strings */,
+				1B4D3CCA148E7AD10019889D /* PlistBaseViewer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B4D3CBA148E7AD10019889D /* PlistBaseViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4D3CCD148E7AD10019889D /* Build configuration list for PBXNativeTarget "PlistBaseViewer" */;
+			buildPhases = (
+				1B4D3CB7148E7AD10019889D /* Sources */,
+				1B4D3CB8148E7AD10019889D /* Frameworks */,
+				1B4D3CB9148E7AD10019889D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlistBaseViewer;
+			productName = PlistBaseViewer;
+			productReference = 1B4D3CBB148E7AD10019889D /* PlistBaseViewer.baseviewer */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B4D3CB2148E7AD10019889D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Apple Inc";
+			};
+			buildConfigurationList = 1B4D3CB5148E7AD10019889D /* Build configuration list for PBXProject "PlistBaseViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B4D3CB0148E7AD10019889D;
+			productRefGroup = 1B4D3CBC148E7AD10019889D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B4D3CBA148E7AD10019889D /* PlistBaseViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B4D3CB9148E7AD10019889D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D3CC9148E7AD10019889D /* InfoPlist.strings in Resources */,
+				1B4D3CD2148E7B110019889D /* PlistBaseViewer.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B4D3CB7148E7AD10019889D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D3CD6148E7BDC0019889D /* PlistBaseViewerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B4D3CC7148E7AD10019889D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4D3CC8148E7AD10019889D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B4D3CCB148E7AD10019889D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1B4D3CCC148E7AD10019889D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1B4D3CCE148E7AD10019889D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlistBaseViewer/PlistBaseViewer-Prefix.pch";
+				INFOPLIST_FILE = "PlistBaseViewer/PlistBaseViewer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = baseviewer;
+			};
+			name = Debug;
+		};
+		1B4D3CCF148E7AD10019889D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlistBaseViewer/PlistBaseViewer-Prefix.pch";
+				INFOPLIST_FILE = "PlistBaseViewer/PlistBaseViewer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = baseviewer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B4D3CB5148E7AD10019889D /* Build configuration list for PBXProject "PlistBaseViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4D3CCB148E7AD10019889D /* Debug */,
+				1B4D3CCC148E7AD10019889D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4D3CCD148E7AD10019889D /* Build configuration list for PBXNativeTarget "PlistBaseViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4D3CCE148E7AD10019889D /* Debug */,
+				1B4D3CCF148E7AD10019889D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B4D3CB2148E7AD10019889D /* Project object */;
+}
