@@ -10,5 +10,6 @@
 
 @interface PlistBaseViewerViewController : NSViewController <BaseViewerPlugin>
 
+@property (strong) IBOutlet NSTextView *textView;
 
 @end

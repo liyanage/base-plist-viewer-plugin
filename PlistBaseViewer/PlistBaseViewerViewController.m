@@ -6,6 +6,7 @@
 //
 
 #import "PlistBaseViewerViewController.h"
+#import <Python/Python.h>
 
 @interface PlistBaseViewerViewController ()
 @property (copy) NSString *plistText;
@@ -13,6 +14,21 @@
 @end
 
 @implementation PlistBaseViewerViewController
+
++ (void)initialize
+{
+	if ([self class] == [PlistBaseViewerViewController class]) {
+		Py_Initialize();
+		NSURL *scriptURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"keyedarchive" withExtension:@"py"];
+		NSURL *resourcesURL = [scriptURL URLByDeletingLastPathComponent];
+		
+		PyObject *currentPath = PySys_GetObject("path");
+		NSArray *pathItems = [self stringArrayForPyObject:currentPath];
+		NSString *newPath = [NSString stringWithFormat:@"%@:%s", [pathItems componentsJoinedByString:@":"], [resourcesURL fileSystemRepresentation]];
+		
+		PySys_SetPath((char *)[newPath UTF8String]);
+	}
+}
 
 - (id)init
 {
@@ -23,6 +39,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;
+}
+
+- (void)awakeFromNib
+{
+	// Disable wrapping, http://stackoverflow.com/questions/3174140/how-to-disable-word-wrap-of-nstextview/18245578#18245578
+	NSSize layoutSize = [self.textView maxSize];
+	layoutSize.width = layoutSize.height;
+	[self.textView setMaxSize:layoutSize];
+	[[self.textView textContainer] setWidthTracksTextView:NO];
+	[[self.textView textContainer] setContainerSize:layoutSize];
 }
 
 
@@ -39,15 +65,87 @@
 
 - (void)setData:(NSData *)data forCellInTable:(NSString *)tableName column:(NSString *)columnName withRowID:(long long)rowid
 {
-	id plist = [self propertyListForData:data];
-	if (!plist) {
-		self.plistText = NSLocalizedString(@"(Unable to decode as property list)", @"");
+	PyObject *mainModule = NULL, *globalsDictionary = NULL;
+    mainModule = PyImport_AddModule("__main__");
+    if (!mainModule) {
+        return;
+	}
+    globalsDictionary = PyModule_GetDict(mainModule);
+	PyObject *locals = PyDict_New();
+	PyObject *dataValue = PyString_FromStringAndSize([data bytes], [data length]);
+	if (!dataValue) {
+		Py_CLEAR(locals);
+		return;
+	}
+	PyDict_SetItemString(locals, "archive_data", dataValue);
+	Py_CLEAR(dataValue);
+	
+	NSString *scriptString = @"import keyedarchive\narchive, output_error = keyedarchive.KeyedArchive.archive_from_bytes(archive_data)\noutput_dump = archive.dump_string()\n";
+
+	PyObject *result = PyRun_String([scriptString UTF8String], Py_file_input, globalsDictionary, locals);
+	if (!result) {
+		if (PyErr_Occurred()) {
+			PyErr_Print();
+		}
+		Py_CLEAR(locals);
+		return;
+	}
+	Py_CLEAR(result);
+	
+	PyObject *output = PyDict_GetItemString(locals, "output_dump");
+	if (!output) {
+		Py_CLEAR(locals);
 		return;
 	}
 	
-	NSData *xmlPlistData = [NSPropertyListSerialization dataWithPropertyList:plist format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
-	self.plistText = [[NSString alloc] initWithData:xmlPlistData encoding:NSUTF8StringEncoding];
+	NSString *stringResult = [[self class] stringForPyObject:output];
+	Py_CLEAR(locals);
+	self.plistText = stringResult;
 }
+
+
++ (NSString *)stringForPyObject:(PyObject *)object
+{
+	PyObject *strObject = PyObject_Str(object);
+	if (!strObject) {
+		return nil;
+	}
+
+	const char *objectString = NULL;
+	Py_ssize_t objectStringLength = 0;
+	NSString *resultString = nil;
+
+	if (!PyObject_AsCharBuffer(strObject, &objectString, &objectStringLength)) {
+		resultString = [[NSString alloc] initWithBytes:objectString length:objectStringLength encoding:NSUTF8StringEncoding];
+	}
+	
+	Py_CLEAR(strObject);
+
+	return resultString;
+}
+
+
++ (NSArray *)stringArrayForPyObject:(PyObject *)object
+{
+	if (!PyList_Check(object)) {
+		return nil;
+	}
+	
+	NSMutableArray *result = [NSMutableArray array];
+	Py_ssize_t size = PyList_Size(object);
+	
+	for (NSInteger i = 0; i < size; i++) {
+		NSString *itemString = nil;
+		PyObject *item = PyList_GetItem(object, i);
+		itemString = [self stringForPyObject:item];
+		if (itemString) {
+			[result addObject:itemString];
+		}
+	}
+	
+	return result;
+}
+
 
 - (CGFloat)priorityForData:(NSData *)data
 {

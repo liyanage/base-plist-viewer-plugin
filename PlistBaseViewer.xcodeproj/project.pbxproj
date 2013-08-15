@@ -11,6 +11,8 @@
 		1B4D3CC9148E7AD10019889D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D3CC7148E7AD10019889D /* InfoPlist.strings */; };
 		1B4D3CD2148E7B110019889D /* PlistBaseViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D3CD1148E7B110019889D /* PlistBaseViewer.xib */; };
 		1B4D3CD6148E7BDC0019889D /* PlistBaseViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */; };
+		1B51195717BBECDA00D92E57 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B51195617BBECDA00D92E57 /* Python.framework */; };
+		1B51195917BC181600D92E57 /* keyedarchive.py in Resources */ = {isa = PBXBuildFile; fileRef = 1B51195817BC181600D92E57 /* keyedarchive.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1B4D3CD1148E7B110019889D /* PlistBaseViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlistBaseViewer.xib; sourceTree = "<group>"; };
 		1B4D3CD3148E7BDC0019889D /* PlistBaseViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistBaseViewerViewController.h; sourceTree = "<group>"; };
 		1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistBaseViewerViewController.m; sourceTree = "<group>"; };
+		1B51195617BBECDA00D92E57 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = ../../../../../System/Library/Frameworks/Python.framework; sourceTree = "<group>"; };
+		1B51195817BC181600D92E57 /* keyedarchive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = keyedarchive.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B51195717BBECDA00D92E57 /* Python.framework in Frameworks */,
 				1B4D3CBF148E7AD10019889D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +65,7 @@
 		1B4D3CBD148E7AD10019889D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B51195617BBECDA00D92E57 /* Python.framework */,
 				1B4D3CBE148E7AD10019889D /* Cocoa.framework */,
 				1B4D3CC0148E7AD10019889D /* Other Frameworks */,
 			);
@@ -79,6 +85,7 @@
 		1B4D3CC4148E7AD10019889D /* PlistBaseViewer */ = {
 			isa = PBXGroup;
 			children = (
+				1B51195817BC181600D92E57 /* keyedarchive.py */,
 				1B4D3CD0148E7AF70019889D /* BaseViewerPluginProtocols.h */,
 				1B4D3CD3148E7BDC0019889D /* PlistBaseViewerViewController.h */,
 				1B4D3CD4148E7BDC0019889D /* PlistBaseViewerViewController.m */,
@@ -149,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B51195917BC181600D92E57 /* keyedarchive.py in Resources */,
 				1B4D3CC9148E7AD10019889D /* InfoPlist.strings in Resources */,
 				1B4D3CD2148E7B110019889D /* PlistBaseViewer.xib in Resources */,
 			);
@@ -200,9 +208,9 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -221,8 +229,8 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -269,6 +277,7 @@
 				1B4D3CCF148E7AD10019889D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
