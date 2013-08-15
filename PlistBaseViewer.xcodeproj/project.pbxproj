@@ -237,6 +237,7 @@
 		1B4D3CCE148E7AD10019889D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlistBaseViewer/PlistBaseViewer-Prefix.pch";
 				INFOPLIST_FILE = "PlistBaseViewer/PlistBaseViewer-Info.plist";
@@ -249,6 +250,7 @@
 		1B4D3CCF148E7AD10019889D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlistBaseViewer/PlistBaseViewer-Prefix.pch";
 				INFOPLIST_FILE = "PlistBaseViewer/PlistBaseViewer-Info.plist";
